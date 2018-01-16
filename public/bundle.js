@@ -43077,14 +43077,23 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var WeatherForm = __webpack_require__(350);
+	var WeatherMessage = __webpack_require__(351);
+
 	var Weather = _React2.default.createClass({
 	  displayName: 'Weather',
 
 	  render: function render() {
 	    return _React2.default.createElement(
-	      'h1',
+	      'div',
 	      null,
-	      'Weather Component'
+	      _React2.default.createElement(
+	        'h1',
+	        null,
+	        'Get Weather'
+	      ),
+	      _React2.default.createElement(WeatherForm, null),
+	      _React2.default.createElement(WeatherMessage, null)
 	    );
 	  }
 	});
@@ -43142,6 +43151,71 @@
 	});
 
 	module.exports = Examples;
+
+/***/ }),
+/* 350 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _React = __webpack_require__(217);
+
+	var _React2 = _interopRequireDefault(_React);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var WeatherForm = _React2.default.createClass({
+	  displayName: "WeatherForm",
+
+	  render: function render() {
+	    return _React2.default.createElement(
+	      "div",
+	      null,
+	      _React2.default.createElement(
+	        "form",
+	        null,
+	        _React2.default.createElement("input", { type: "text", placeholder: "Enter city name" }),
+	        _React2.default.createElement(
+	          "button",
+	          null,
+	          "Get Weather"
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = WeatherForm;
+
+/***/ }),
+/* 351 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _React = __webpack_require__(217);
+
+	var _React2 = _interopRequireDefault(_React);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var WeatherMessage = _React2.default.createClass({
+	  displayName: 'WeatherMessage',
+
+	  render: function render() {
+	    return _React2.default.createElement(
+	      'div',
+	      null,
+	      _React2.default.createElement(
+	        'p',
+	        null,
+	        'It is very cold in New York'
+	      )
+	    );
+	  }
+	});
+
+	module.exports = WeatherMessage;
 
 /***/ })
 /******/ ]);
