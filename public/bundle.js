@@ -52,11 +52,20 @@
 	var ReactDOM = __webpack_require__(215);
 
 	var Main = __webpack_require__(216);
+	var Weather = __webpack_require__(347);
+	var About = __webpack_require__(348);
+	var Examples = __webpack_require__(349);
 
 	ReactDOM.render(React.createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.hashHistory },
-	  React.createElement(_reactRouter.Route, { path: '/', component: Main })
+	  React.createElement(
+	    _reactRouter.Route,
+	    { path: '/', component: Main },
+	    React.createElement(_reactRouter.Route, { path: 'about', component: About }),
+	    React.createElement(_reactRouter.Route, { path: 'examples', component: Examples }),
+	    React.createElement(_reactRouter.IndexRoute, { component: Weather })
+	  )
 	), document.getElementById('app'));
 
 /***/ }),
@@ -24863,7 +24872,8 @@
 	        'h1',
 	        null,
 	        'Main Component'
-	      )
+	      ),
+	      this.props.children
 	    );
 	  }
 	});
@@ -43012,6 +43022,8 @@
 
 	var _React2 = _interopRequireDefault(_React);
 
+	var _reactRouter = __webpack_require__(1);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Nav = _React2.default.createClass({
@@ -43019,14 +43031,117 @@
 
 	  render: function render() {
 	    return _React2.default.createElement(
-	      'h1',
+	      'div',
 	      null,
-	      'Nav Component'
+	      _React2.default.createElement(
+	        'h1',
+	        null,
+	        'Nav Component'
+	      ),
+	      _React2.default.createElement(
+	        _reactRouter.IndexLink,
+	        { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	        'Get Weather'
+	      ),
+	      ' ',
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	        'About'
+	      ),
+	      ' ',
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	        'Examples'
+	      ),
+	      ' ',
+	      _React2.default.createElement('br', null)
 	    );
 	  }
 	});
 
 	module.exports = Nav;
+
+/***/ }),
+/* 347 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _React = __webpack_require__(217);
+
+	var _React2 = _interopRequireDefault(_React);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Weather = _React2.default.createClass({
+	  displayName: 'Weather',
+
+	  render: function render() {
+	    return _React2.default.createElement(
+	      'h1',
+	      null,
+	      'Weather Component'
+	    );
+	  }
+	});
+
+	module.exports = Weather;
+
+/***/ }),
+/* 348 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _React = __webpack_require__(217);
+
+	var _React2 = _interopRequireDefault(_React);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var About = _React2.default.createClass({
+	  displayName: 'About',
+
+	  render: function render() {
+	    return _React2.default.createElement(
+	      'h1',
+	      null,
+	      'About Component'
+	    );
+	  }
+	});
+
+	module.exports = About;
+
+/***/ }),
+/* 349 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _React = __webpack_require__(217);
+
+	var _React2 = _interopRequireDefault(_React);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Examples = _React2.default.createClass({
+	  displayName: 'Examples',
+
+	  render: function render() {
+	    return _React2.default.createElement(
+	      'h1',
+	      null,
+	      'Examples Component'
+	    );
+	  }
+	});
+
+	module.exports = Examples;
 
 /***/ })
 /******/ ]);
