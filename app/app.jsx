@@ -1,7 +1,12 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+import { Route, Router, IndexRoute, hashHistory } from 'react-router';
+var Main = require('Main');
 
 ReactDOM.render(
-  <h1>React Boilerplate app</h1>,
+  <Router history={hashHistory}>
+    <Route path="/" component={Main}>
+    </Route>
+  </Router>,
   document.getElementById('app')
 );
