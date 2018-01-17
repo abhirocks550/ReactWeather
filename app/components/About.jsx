@@ -2,7 +2,7 @@ import React from 'react';
 
 let About = (props) => {
     return (
-      <h1>About Component</h1>
+      <h3>About Component</h3>
     );
   };
 
