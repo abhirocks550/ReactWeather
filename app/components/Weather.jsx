@@ -1,6 +1,7 @@
 import React from 'react';
 var WeatherForm = require('WeatherForm');
 var WeatherMessage = require('WeatherMessage');
+var OpenWeatherMap = require('OpenWeatherMap');
 
 var Weather = React.createClass({
   getInitialState: function () {
@@ -11,9 +12,16 @@ var Weather = React.createClass({
   },
 
   handleSearch: function (location) {
-    this.setState({
-      location: location,
-      temp: 23,
+    var that = this;
+    OpenWeatherMap.getTemp(location).then(function (temp) {
+      that.setState({
+        location: location,
+        temp: temp,
+      });
+    },
+
+    function (err) {
+      alert(err);
     });
   },
 
