@@ -1,10 +1,10 @@
-import React from 'React';
+import React from 'react';
 
 var WeatherMessage = React.createClass({
-  render: function () {
+  render: function (props) {
     return (
       <div>
-        <p>It is very cold in New York</p>
+        <p>It is {this.props.temp} in {this.props.location}</p>
       </div>
     );
   },

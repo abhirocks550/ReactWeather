@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 
 var About = React.createClass({
   render: function () {

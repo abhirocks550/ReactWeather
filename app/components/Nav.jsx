@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import { Link, IndexLink } from 'react-router';
 
 var Nav = React.createClass({
