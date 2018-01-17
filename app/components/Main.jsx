@@ -1,16 +1,14 @@
 import React from 'react';
 var Nav = require('Nav');
 
-var Main = React.createClass({
-  render: function () {
+var Main = (props) => {
     return (
       <div>
         <Nav />
         <h1>Main Component</h1>
-        {this.props.children}
+        {props.children}
       </div>
     );
-  },
-});
+  };
 
 module.exports = Main;

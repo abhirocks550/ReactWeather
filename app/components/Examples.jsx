@@ -1,11 +1,9 @@
 import React from 'react';
 
-var Examples = React.createClass({
-  render: function () {
+var Examples = (props) => {
     return (
       <h1>Examples Component</h1>
     );
-  },
-});
+  };
 
 module.exports = Examples;
