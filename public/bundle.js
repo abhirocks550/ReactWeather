@@ -25526,24 +25526,47 @@
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      location: 'Pune',
-	      temp: 30
+	      isLoading: false
 	    };
 	  },
 
 	  handleSearch: function handleSearch(location) {
 	    var that = this;
+	    that.setState({
+	      isLoading: true
+	    });
 	    OpenWeatherMap.getTemp(location).then(function (temp) {
 	      that.setState({
 	        location: location,
-	        temp: temp
+	        temp: temp,
+	        isLoading: false
 	      });
 	    }, function (err) {
+	      that.setState({
+	        isLoading: false
+	      });
 	      alert(err);
 	    });
 	  },
 
 	  render: function render() {
+	    var _state = this.state,
+	        isLoading = _state.isLoading,
+	        location = _state.location,
+	        temp = _state.temp;
+
+	    function renderMessage() {
+	      if (isLoading) {
+	        return _react2.default.createElement(
+	          'h3',
+	          null,
+	          'Fetching weather ...'
+	        );
+	      } else if (temp && location) {
+	        return _react2.default.createElement(WeatherMessage, { location: location, temp: temp });
+	      }
+	    }
+
 	    return _react2.default.createElement(
 	      'div',
 	      null,
@@ -25553,7 +25576,7 @@
 	        'Get Weather'
 	      ),
 	      _react2.default.createElement(WeatherForm, { onSearch: this.handleSearch }),
-	      _react2.default.createElement(WeatherMessage, { location: this.state.location, temp: this.state.temp })
+	      renderMessage()
 	    );
 	  }
 	});
