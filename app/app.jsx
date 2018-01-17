@@ -1,10 +1,10 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+const React = require('react');
+const ReactDOM = require('react-dom');
 import { Route, Router, IndexRoute, hashHistory } from 'react-router';
-var Main = require('Main');
-var Weather = require('Weather');
-var About = require('About');
-var Examples = require('Examples');
+let Main = require('Main');
+let Weather = require('Weather');
+let About = require('About');
+let Examples = require('Examples');
 
 ReactDOM.render(
   <Router history={hashHistory}>

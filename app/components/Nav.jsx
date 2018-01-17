@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
 
-var Nav = (props) => {
+let Nav = (props) => {
     return (
       <div>
         <h1>Nav Component</h1>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-var Examples = (props) => {
+let Examples = (props) => {
     return (
       <h1>Examples Component</h1>
     );

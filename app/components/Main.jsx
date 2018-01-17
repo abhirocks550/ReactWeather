@@ -1,7 +1,7 @@
 import React from 'react';
-var Nav = require('Nav');
+let Nav = require('Nav');
 
-var Main = (props) => {
+let Main = (props) => {
     return (
       <div>
         <Nav />
