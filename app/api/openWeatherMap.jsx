@@ -6,7 +6,7 @@ const OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/' +
 module.exports = {
   getTemp: function (location) {
     var encodedLocation = encodeURIComponent(location);
-    var requestURL = `${OPEN_WEATHER_MAP_URL}&q=${encodedLocation}`;
+    var requestURL = `${OPEN_WEATHER_MAP_URL}&q=${encodedLocation}&units=metric`;
 
     return axios.get(requestURL).then(function (res) {
       if (res.data.cod && res.data.message) {
